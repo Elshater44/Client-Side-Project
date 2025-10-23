@@ -1,6 +1,6 @@
 ﻿# E-Commerce Website
 
-A modern, responsive e-commerce website built with HTML, CSS, and JavaScript.
+A modern e-commerce website built with HTML, CSS, and JavaScript.
 
 ## Project Structure
 
@@ -76,4 +76,5 @@ git clone https://github.com/ElshaterITI/Client-Side-Project.git
 ## Author
 
 ElshaterITI
+
 
