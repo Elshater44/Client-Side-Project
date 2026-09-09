@@ -154,3 +154,60 @@
     justify-content: space-between;
     margin-bottom: 20px;
 }
+
+.product-state {
+    display: grid;
+    place-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 220px;
+    padding: 32px;
+    text-align: center;
+    color: #3f3f3f;
+    background: #fff;
+    border: 1px dashed #999;
+    border-radius: 8px;
+}
+
+.product-state--error {
+    color: #9b1c1c;
+    border-color: #d77;
+    background: #fff7f7;
+}
+
+.product-state-retry {
+    padding: 10px 16px;
+    color: #fff;
+    background: #3700b3;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.product-action-button {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1;
+    background: transparent;
+    border: 0;
+}
+
+.product-image-unavailable {
+    display: grid;
+    min-height: 180px;
+    background: #f2f2f2;
+}
+
+.product-image-unavailable::after {
+    content: "Image unavailable";
+    place-self: center;
+    color: #666;
+}
+
+.product-image-unavailable .product-img {
+    display: none;
+}
