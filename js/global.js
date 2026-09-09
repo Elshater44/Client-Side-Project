@@ -560,30 +560,3 @@ function showToast(message) {
         setTimeout(() => toast.remove(), 500);
     }, 2000);
 }
-
-export function initSearchBar() {
-    const containerSelector = ".search-bar-container";
-    const container = document.querySelector(containerSelector);
-    const searchInput = container.querySelector(".search-bar-input");
-    const searchButton = container.querySelector("button");
-
-    searchButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        searchForProduct(searchInput.value.trim()).then((products) => {
-            console.log(products);
-            renderProducts(products);
-        });
-        console.log(products);
-        renderProducts(products);
-    });
-    searchInput.addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            console.log("Clicked");
-            searchForProduct(searchInput.value.trim()).then((products) => {
-                console.log(products);
-                renderProducts(products);
-            });
-        }
-    });
-}
