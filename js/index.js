@@ -1,18 +1,34 @@
-import { fetchProducts, filterByCategory, searchForProduct, renderProducts, initSearchBar } from "./global.js";
+import { fetchProducts, renderProducts, renderProductState } from "./global.js";
+
+async function loadFeaturedProducts() {
+    renderProductState("loading", "Loading featured products…");
+    try {
+        renderProducts(await fetchProducts(5));
+    } catch (error) {
+        console.error("Unable to load featured products:", error);
+        renderProductState(
+            "error",
+            "We could not load featured products right now. Please try again.",
+            loadFeaturedProducts
+        );
+    }
+}
+
 function initHeroSearchRedirect() {
     const form = document.querySelector(".search-bar-form");
+    const input = document.querySelector(".search-bar-input");
     if (!form) return;
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        // Redirect to products.html
-        window.location.href = "./products.html";
+        const query = input?.value.trim();
+        window.location.href = `./products.html${
+            query ? `?search=${encodeURIComponent(query)}` : ""
+        }`;
     });
 }
 
-
-// initSearchBar()
-fetchProducts(5).then((data) => renderProducts(data));
 document.addEventListener("DOMContentLoaded", () => {
     initHeroSearchRedirect();
+    loadFeaturedProducts();
 });
