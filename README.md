@@ -42,6 +42,8 @@ A modern e-commerce website built with HTML, CSS, and JavaScript.
 -   Responsive navigation
 -   Global styling for consistent UI
 -   Partner logos showcase
+-   Product data from the free, no-login [DummyJSON Products API](https://dummyjson.com/docs/products)
+-   Loading, empty, and retry states when product data is unavailable
 
 ## Pages
 
